@@ -4,18 +4,19 @@ import 'package:flutter_application_1/ui/shared/custom_flat_button.dart';
 import 'package:provider/provider.dart';
 
 class CounterProviderView extends StatelessWidget {
-  const CounterProviderView({super.key});
+  final String base;
+
+  const CounterProviderView({Key? key, required this.base}) : super(key: key);
 
   @override
   //Make Provider
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => CounterProvider(),
+      create: (_) => CounterProvider(this.base),
       child: _CounterProviderViewBody(),
     );
   }
 }
-
 
 class _CounterProviderViewBody extends StatelessWidget {
   @override
@@ -26,7 +27,6 @@ class _CounterProviderViewBody extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-    
         Spacer(),
         Text(
           'Contador Provider Stateful',

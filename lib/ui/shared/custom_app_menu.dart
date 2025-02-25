@@ -51,9 +51,18 @@ class _TableDesktopMenu extends StatelessWidget {
           ),
           SizedBox(width: 10),
           CustomFlatButton(
-            text: 'Views',
+            text: 'Stateful 100',
             // onPressed: () => Navigator.pushNamed(context, '/abc123'),
-            onPressed: () => locator<NavigationService>().navigateTo('/view'),
+            onPressed:
+                () => locator<NavigationService>().navigateTo('/stateful/100'),
+            color: Colors.white,
+          ),
+          SizedBox(width: 10),
+          CustomFlatButton(
+            text: 'Provider 200',
+            // onPressed: () => Navigator.pushNamed(context, '/abc123'),
+            onPressed:
+                () => locator<NavigationService>().navigateTo('/provider?q=200'),
             color: Colors.white,
           ),
         ],
